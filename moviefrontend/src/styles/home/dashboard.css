@@ -1,0 +1,89 @@
+.dashboard-wrapper {
+  display: flex;
+  height: 90.5vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demoImg {
+  width: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.sidebar {
+  width: 250px;
+  background: rgb(14, 170, 125);
+  padding: 20px 0;
+  position: absolute;
+  height: 94.5vh;
+  transition: width 0.3s;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+.sidebar .sidebar-header {
+  padding: 10px 20px;
+  font-size: large;
+  padding-left: 40px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+.sidebar .nav .nav-item .nav-link {
+  padding: 10px 20px;
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.sidebar .nav .nav-item .nav-link:hover {
+  background: white;
+}
+.sidebar .nav .nav-item .nav-link i {
+  margin-right: 10px;
+}
+.sidebar .nav .nav-item .btn {
+  padding: 10px 20px;
+  border: none;
+  background: none;
+  text-align: left;
+}
+.sidebar .nav .nav-item .btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+  margin-left: 250px;
+  flex-grow: 1;
+  background: #f8f9fa;
+}
+.main-content .dashboard-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: rgb(14, 170, 125);
+  margin-left: 15px;
+}
+.main-content .lead {
+  margin-bottom: 2rem;
+  margin-left: 15px;
+}
+.main-content .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+.main-content .card:hover {
+  transform: translateY(-5px);
+}
+.main-content .card .card-body {
+  padding: 20px;
+}
+.main-content .card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.main-content .card .card-text {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.main-content .card .btn {
+  color: rgb(14, 170, 125);
+  transition: background 0.3s;
+}/*# sourceMappingURL=dashboard.css.map */

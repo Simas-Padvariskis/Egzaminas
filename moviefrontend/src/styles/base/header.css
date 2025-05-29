@@ -1,0 +1,80 @@
+header {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+header .logoImg {
+  width: 50px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 18px;
+  margin-bottom: 0;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+  transition: transform 0.3s;
+}
+header nav ul li:hover {
+  transform: scale(1.05);
+}
+header .navbar {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+}
+header .navbar .logo-title {
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+header .navbar .logo-title:hover {
+  color: #000000;
+}
+header .navbar .navbar-toggler {
+  color: rgba(255, 255, 255, 0.55);
+  border: 0.1px solid rgba(255, 255, 255, 0.1);
+}
+header .navbar .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+header .navbar .navbar-nav .nav-item {
+  margin-left: 20px;
+  margin-right: 0px;
+}
+header .navbar .navbar-nav .nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(14, 170, 125);
+}
+
+@media (max-width: 995px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+.UserInfo {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.UserInfo-roles {
+  position: absolute;
+  right: 30px;
+  top: 50px;
+}
+
+.UsersNav {
+  color: red !important;
+}/*# sourceMappingURL=header.css.map */

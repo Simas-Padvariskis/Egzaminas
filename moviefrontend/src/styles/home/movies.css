@@ -1,0 +1,75 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+}
+
+.edit-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.edit-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.edit-form input, .edit-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.edit-form .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.SearchSection {
+  margin-left: 20px;
+}
+
+.AddCategoryButton {
+  margin-left: 20px;
+}
+
+.form-label {
+  margin-right: 20px;
+}/*# sourceMappingURL=movies.css.map */

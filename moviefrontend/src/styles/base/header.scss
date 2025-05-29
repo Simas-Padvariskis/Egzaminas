@@ -1,0 +1,99 @@
+@use 'variables';
+
+header {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+
+    .logoImg {
+        width: 50px;
+        height: fit-content;
+        margin-left: 18px ;
+        margin-bottom: 0;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+                margin-right: 20px;
+                transition: transform variables.$transition-speed;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .navbar {
+        -webkit-backdrop-filter: variables.$backdrop-effect;
+        backdrop-filter: variables.$backdrop-effect;
+        padding: 15px 0;
+
+        .logo-title {
+            margin-left: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            
+            &:hover {
+                color: variables.$secondary-color;
+            }
+        }
+
+        .navbar-toggler {
+            color: rgba(255, 255, 255, 0.55);
+            border: 0.1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar-nav {
+            .nav-item {
+                margin-left: 20px;
+                margin-right: 0px;
+
+                .nav-link {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: rgb(14, 170, 125);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 995px) {
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+}
+
+.UserInfo{
+    position: absolute;
+    right: 30px; 
+    top: 30px;      
+}
+
+.UserInfo-roles{
+    position: absolute;
+    right: 30px; 
+    top: 50px;      
+}
+
+.UsersNav{
+    color: red !important;
+}

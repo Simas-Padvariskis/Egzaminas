@@ -1,0 +1,111 @@
+@use 'variables';
+
+.dashboard-wrapper {
+    display: flex;
+    height: 90.5vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .demoImg{
+    width:300px;
+    height: fit-content;
+  }
+
+  .sidebar {
+    width: 250px;
+    background: rgb(14, 170, 125);
+    padding: 20px 0;
+    position: absolute;
+    height: 94.5vh;
+    transition: width 0.3s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  
+    .sidebar-header {
+      padding: 10px 20px;
+      font-size: large;
+      padding-left: 40px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav {
+      .nav-item {
+        .nav-link {
+          padding: 10px 20px;
+          color: black;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+  
+          &:hover {
+            background: white;
+          }
+  
+          i {
+            margin-right: 10px;
+          }
+        }
+  
+        .btn {
+          padding: 10px 20px;
+          border: none;
+          background: none;
+          text-align: left;
+  
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+  
+  .main-content {
+    margin-left: 250px;
+    flex-grow: 1;
+    background: #f8f9fa;
+  
+    .dashboard-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: rgb(14, 170, 125);
+      margin-left: 15px;
+    }
+  
+    .lead {
+      margin-bottom: 2rem;
+      margin-left: 15px;
+    }
+  
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      .card-body {
+        padding: 20px;
+      }
+  
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+  
+      .card-text {
+        color: #666;
+        margin-bottom: 1.5rem;
+      }
+  
+      .btn {
+        // background: variables.$primary-color;
+        color: rgb(14, 170, 125);
+        transition: background 0.3s;
+  
+        
+      }
+    }
+  }
