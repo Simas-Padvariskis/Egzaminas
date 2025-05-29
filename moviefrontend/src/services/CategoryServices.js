@@ -35,34 +35,33 @@ export const getCategories = async (accessToken, queryParams = {}) => {
 
     try {
         const res = await fetchRequest(url, { method: 'GET' }, accessToken);
-        console.log('Response from getCategories:', res); // Log the full response for debugging
+        console.log('Response from getCategories:', res); // Loging the response of categories
 
-        // Access the category data directly from the 'data' property
         if (res && res.data && Array.isArray(res.data)) {
-            return res.data; // Return the categories array directly
+            return res.data; 
         } else {
             console.error('Cateogories data is not available or malformed');
-            return []; // Return an empty array if no valid category data is found
+            return []; 
         }
     } catch (error) {
         console.error('Error fetching categories:', error);
-        return []; // Return empty array in case of an error
+        return []; 
     }
 };
 
 
-// Gauna konkursą pagal ID ???
+// Gauna kategoriją pagal ID
 export const getCategoryById = async (id, accessToken) => {
     try {
         const res = await fetchRequest(`/categories/${id}`, { method: 'GET' }, accessToken);
-        return res?.data || null; // Consistent with getCategories structure
+        return res?.data || null; 
     } catch (error) {
         console.error(`Error fetching category ${id}:`, error);
         return null;
     }
 };
 
-// // Sukuria naują konkursą +
+// // Sukuria naują kategoriją
 export const createCategory = async (categoryData, token) => {
   const response = await fetch('http://localhost:8080/api/v1/categories', {
     method: 'POST',
@@ -80,13 +79,13 @@ export const createCategory = async (categoryData, token) => {
   return await response.json();
 };
 
-// Atnaujina konkursą +
+// Atnaujina kategoriją
 export async function updateCategory(id, updatedCategory, accessToken) {
   const response = await fetch(`http://localhost:8080/api/v1/categories/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`,  // <-- token here
+      'Authorization': `Bearer ${accessToken}`,  
     },
     body: JSON.stringify(updatedCategory),
   });
@@ -97,7 +96,7 @@ export async function updateCategory(id, updatedCategory, accessToken) {
   return response.json();
 }
 
-// Ištrina konkursą +
+// Ištrina kategoriją
 export const deleteCategory = async (id, accessToken) => {
     const response = await fetchRequest(`/categories/${id}`, { method: 'DELETE' }, accessToken);
     return response.category || null;

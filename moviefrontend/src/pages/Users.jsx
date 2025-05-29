@@ -14,14 +14,14 @@ function Users() {
   const isAdmin = () => {
     if (!user?.roles) return false;
     
-    // Handle both array and string formats
+    
     const rolesArray = Array.isArray(user.roles) 
       ? user.roles
       : typeof user.roles === 'string'
-        ? user.roles.split(',') // Handle comma-separated strings
+        ? user.roles.split(',') 
         : [];
     
-    // Check for admin role in different possible formats
+   
     return rolesArray.some(role => {
       const normalizedRole = role.trim().toUpperCase();
       return (
@@ -61,7 +61,7 @@ function Users() {
     };
 
   useEffect(() => {
-    if (!isAdmin()) return; // Early return if not admin
+    if (!isAdmin()) return; 
 
     const fetchUsers = async () => {
       try {
@@ -85,7 +85,7 @@ function Users() {
         }
 
         const data = await response.json();
-        setUsers(data.data || data); // Handle both formats: {data: [...]} or direct array
+        setUsers(data.data || data); 
       } catch (err) {
         setError(err.message);
         console.error('Error fetching users:', err);
@@ -95,7 +95,7 @@ function Users() {
     };
 
     fetchUsers();
-  }, [navigate, setLoading, user]); // Added user to dependency array
+  }, [navigate, setLoading, user]); 
 
   if (!isAdmin()) {
     return (

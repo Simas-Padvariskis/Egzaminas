@@ -31,7 +31,6 @@ export const AuthProvider = ({ children }) => {
         return data;
     };
 
-    // Prisijungimas
     const login = async (email, password) => {
     const res = await authServices.login(email, password);
     
@@ -40,7 +39,6 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem('userId', res.id);
         localStorage.setItem('username', res.username);
         
-        // Convert roles to simple string array
         const roles = res.roles?.map(role => role.authority || role) || [];
         localStorage.setItem('roles', JSON.stringify(roles));
         
@@ -52,17 +50,13 @@ export const AuthProvider = ({ children }) => {
         return res;
     };
 
-    // Atsijungimas
     const logout = () => {
-        // Clear React state
         setToken(null);
         setUser(null);
         
-        // Clear all auth-related storage
         const authKeys = ['jwtToken', 'username', 'roles', 'userId'];
         authKeys.forEach(key => localStorage.removeItem(key));
         
-        // Force refresh and redirect
         window.location.href = '/login';
         window.location.reload();
     };

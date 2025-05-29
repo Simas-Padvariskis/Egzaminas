@@ -20,7 +20,6 @@ const EditMovieModal = ({ movie, onSave, onClose }) => {
                 category_id: movie.category?.id || ''
             });
         } else {
-            // Reset form for new movie
             setFormData({
                 title: '',
                 description: '',
@@ -35,7 +34,7 @@ const EditMovieModal = ({ movie, onSave, onClose }) => {
             try {
                 const res = await fetch('http://localhost:8080/api/v1/categories');
                 const data = await res.json();
-                setCategories(data.data); // Assumes { data: [...] }
+                setCategories(data.data); 
             } catch (err) {
                 console.error('Failed to load categories:', err);
             }

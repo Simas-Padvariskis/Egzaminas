@@ -39,28 +39,27 @@ export const getCommentsByMovieId = async (movieId) => {
     if (response.status === 401) {
       localStorage.removeItem('jwtToken');
       window.location.href = '/login';
-      return []; // Return empty array instead of throwing error
+      return []; 
     }
 
     if (!response.ok) {
       const errorData = await response.json();
       console.error('API error:', errorData);
-      return []; // Return empty array on API errors
+      return []; 
     }
 
     const data = await response.json();
     
-    // Handle different response structures:
     if (Array.isArray(data)) {
-      return data; // Direct array response
+      return data; 
     } else if (data.data && Array.isArray(data.data)) {
-      return data.data; // Wrapped array response
+      return data.data; 
     }
-    return []; // Fallback for unexpected formats
+    return []; 
     
   } catch (error) {
     console.error('Network error:', error);
-    return []; // Return empty array on network errors
+    return []; 
   }
 };
 

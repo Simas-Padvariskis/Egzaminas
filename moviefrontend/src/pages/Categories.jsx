@@ -26,7 +26,7 @@ function Categories() {
     useEffect(() => {
         document.title = 'Movie Application - Kategorijų sąrašas';
 
-        const token = localStorage.getItem('jwtToken');  // Fallback to localStorage
+        const token = localStorage.getItem('jwtToken');  
 
         if (!token) {
             navigate('/login');
@@ -50,8 +50,8 @@ function Categories() {
         setError(null);
         try {
             const data = await getCategories(accessToken);
-            console.log('Categories data:', data); // Log the response
-            setCategories(Array.isArray(data) ? data : []); // Make sure it's always an array
+            console.log('Categories data:', data); // Logging category response
+            setCategories(Array.isArray(data) ? data : []); 
         } catch (err) {
             setError(`Klaida: ${err.message}`);
         } finally {
@@ -107,7 +107,7 @@ function Categories() {
                             >
                             Pridėti Kategoriją
                         </button>
-                        {/* Safe rendering: Ensure categories is always an array */}
+                        
                         {Array.isArray(categories) && categories.length > 0 ? (
                             <div className="row row-cols-1 row-cols-md-2 g-4">
                                 {categories.map((category) => (

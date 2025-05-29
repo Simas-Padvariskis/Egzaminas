@@ -31,7 +31,7 @@ function Login() {
     }
 
     try {
-      await login(email, password); // uses context, which updates accessToken in state
+      await login(email, password); 
       navigate('/dashboard');
       window.location.reload();
     } catch (err) {

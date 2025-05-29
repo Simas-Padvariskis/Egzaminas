@@ -9,7 +9,6 @@ function CommentSection({ movieId, comments = [], onCommentAdded }) {
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Keep localComments in sync if parent comments prop changes
   useEffect(() => {
     setLocalComments(comments);
   }, [comments]);
@@ -60,7 +59,6 @@ function CommentSection({ movieId, comments = [], onCommentAdded }) {
         rating: parseInt(rating, 10),
         movie_id: movieId
       });
-      // Update local comments immediately
       setLocalComments(prev => [createdComment, ...prev]);
       onCommentAdded(createdComment);
       setNewComment('');
@@ -78,7 +76,6 @@ function CommentSection({ movieId, comments = [], onCommentAdded }) {
 
     try {
       await deleteComment(commentId);
-      // Remove deleted comment from local state
       setLocalComments(prev => prev.filter(c => c?.id !== commentId));
     } catch (err) {
       setError('Nepavyko ištrinti komentaro: ' + err.message);
@@ -94,7 +91,7 @@ function CommentSection({ movieId, comments = [], onCommentAdded }) {
       ) : (
         <div className="comments-list mb-4">
           {localComments
-            .filter(c => c) // filter out undefined/null
+            .filter(c => c) 
             .map(comment => (
               <div key={comment.id} className="card mb-3 Comment">
                 <div className="card-body">

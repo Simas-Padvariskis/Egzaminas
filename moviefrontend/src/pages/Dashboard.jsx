@@ -27,7 +27,7 @@ function Dashboard() {
     const handleLogout = async () => {
         setLoading(true);
         try {
-            await logout(); // Use context logout
+            await logout(); 
         } catch (error) {
             console.error('Logout error:', error);
         } finally {
@@ -86,7 +86,7 @@ function Dashboard() {
                 </div>
               </div>
 
-              <div className="col">
+              {/* <div className="col">
                 <div className="card h-100">
                   <div className="card-body">
                     <h5 className="card-title">Atsiliepimai</h5>
@@ -96,7 +96,7 @@ function Dashboard() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

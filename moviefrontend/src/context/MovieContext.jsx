@@ -17,7 +17,7 @@ export const MovieProvider = ({ children }) => {
             }));
         } catch (error) {
             console.error("Error fetching movies:", error);
-            return []; // Return empty array if there's an error
+            return []; 
         }
     };
 
@@ -25,12 +25,12 @@ export const MovieProvider = ({ children }) => {
     const getMovieById = async (id) => {
         try {
             const response = await getResponse(movieServices.getMovieById(id, accessToken));
-            const movie = response || null; // Assuming movie is returned directly or in response
+            const movie = response || null; 
 
             return movie ? { ...movie, id: movie.id } : null;
         } catch (error) {
             console.error(`Error fetching movie with id ${id}:`, error);
-            return null; // Return null if there's an error
+            return null; 
         }
     };
 

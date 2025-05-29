@@ -15,16 +15,15 @@ function Header() {
     setRoles(storedRoles);
   }, []);
 
-  // Check if user has admin role
+  
     const isAdmin = () => {
       if (!roles) return false;
       
-      // Handle both string and array formats
+      
       if (Array.isArray(roles)) {
         return roles.includes('ROLE_ADMIN');
       }
       
-      // If roles is a string (like "ROLE_USER,ROLE_ADMIN")
       return roles.includes('ROLE_ADMIN');
   };
 
@@ -44,7 +43,6 @@ function Header() {
                   <li className="nav-item">
                     <Link className='nav-link' to="/register">Registracija</Link>
                   </li>
-                  {/* Show admin link only for ROLE_ADMIN */}
                     {isAdmin() && (
                       <li className="nav-item">
                         <Link className='nav-link UsersNav' to="/users">Vartotojai</Link>

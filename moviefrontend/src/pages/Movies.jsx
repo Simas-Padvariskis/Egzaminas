@@ -53,8 +53,8 @@ function Movies() {
         setError(null);
         try {
             const data = await getMovies();
-            console.log('Movies data:', data); // Log the response
-            setMovies(Array.isArray(data) ? data : []); // Make sure it's always an array
+            console.log('Movies data:', data); // Logging movie response
+            setMovies(Array.isArray(data) ? data : []); 
             const categories = ['All', ...new Set(movies.map((movie) => movie.category))];
         } catch (err) {
             setError(`Klaida: ${err.message}`);
@@ -147,7 +147,7 @@ function Movies() {
                                 Pridėti Filmą
                             </button>
                         </div>
-                        {/* Safe rendering: Ensure movies is always an array */}
+                       
                         {Array.isArray(filteredMovies) && filteredMovies.length > 0 ? (
                             <div className="row row-cols-1 row-cols-md-2 g-4">
                                 {filteredMovies.map((movie) => (

@@ -35,18 +35,17 @@ export const getMovies = async (accessToken, queryParams = {}) => {
 
     try {
         const res = await fetchRequest(url, { method: 'GET' }, accessToken);
-        console.log('Response from getMovies:', res); // Log the full response for debugging
+        console.log('Response from getMovies:', res); // Logging movie response
 
-        // Access the movie data directly from the 'data' property
         if (res && res.data && Array.isArray(res.data)) {
-            return res.data; // Return the movies array directly
+            return res.data; 
         } else {
             console.error('Movies data is not available or malformed');
-            return []; // Return an empty array if no valid movie data is found
+            return []; 
         }
     } catch (error) {
         console.error('Error fetching movies:', error);
-        return []; // Return empty array in case of an error
+        return [];
     }
 };
 
@@ -80,7 +79,7 @@ export async function updateMovie(id, updatedMovie, accessToken) {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`,  // <-- token here
+      'Authorization': `Bearer ${accessToken}`, 
     },
     body: JSON.stringify(updatedMovie),
   });

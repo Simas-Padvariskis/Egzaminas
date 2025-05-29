@@ -17,7 +17,7 @@ export const CategoryProvider = ({ children }) => {
             }));
         } catch (error) {
             console.error("Error fetching categories:", error);
-            return []; // Return empty array if there's an error
+            return [];
         }
     };
 
@@ -25,12 +25,12 @@ export const CategoryProvider = ({ children }) => {
     const getCategoryById = async (id) => {
         try {
             const response = await getResponse(categoryServices.getCategoryById(id, accessToken));
-            const category = response || null; // Assuming category is returned directly or in response
+            const category = response || null; 
 
             return category ? { ...category, id: category.id } : null;
         } catch (error) {
             console.error(`Error fetching category with id ${id}:`, error);
-            return null; // Return null if there's an error
+            return null; 
         }
     };
 

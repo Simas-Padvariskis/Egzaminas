@@ -45,7 +45,7 @@ export const login = async (email, password) => {
     body: JSON.stringify({ email, password }),
   });
 
-  // Log the full response to check the data (remove later)
+  //Login response to console
   console.log('Login Response:', res);
 
   // Check if the accessToken exists
@@ -56,7 +56,7 @@ export const login = async (email, password) => {
     throw new Error("No accessToken received during login.");
   }
 
-  // Store the userId as before
+  // Store user.id in local storage
   if (res.id) {
     localStorage.setItem('userId', res.id);
   } else {
@@ -64,7 +64,7 @@ export const login = async (email, password) => {
     throw new Error("No userId received during login.");
   }
 
-  // Store the username
+  // Store username in local.storage
   if (res.username) {
     localStorage.setItem('username', res.username);
   } else {
@@ -72,7 +72,7 @@ export const login = async (email, password) => {
     throw new Error("No username received during login.");
   }
 
-  // Store the role
+  // Store role in local storage
   if (res.roles) {
     localStorage.setItem('roles', JSON.stringify(res.roles));
   } else {
