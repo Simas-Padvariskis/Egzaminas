@@ -1,0 +1,21 @@
+.Comment{
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+ .Rating{
+  margin-bottom: 10px;
+ }
+ .SubmitComment{
+  margin-bottom: 30px;
+ }
+ Form{
+  margin-top: 30px;
+ }
+ .CommentText{
+  font-weight: bold;
+ }
